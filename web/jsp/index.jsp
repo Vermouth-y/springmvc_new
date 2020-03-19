@@ -14,6 +14,8 @@
 
     <span><a href="../user/my/pathAnt">Path Ant</a> </span><br>
     <span><a href="../user/rest/1">Rest GET</a> </span><br>
+    <span><a href="../user/pathVariable/王磊">Path Variable</a></span><br>
+    <span><a href="../user/requestParam?loginName=vermouth&password=123456">Request Param</a></span><br>
 
     <form action="../user/rest" method="post">
         <input type="submit" value="Rest POST" />

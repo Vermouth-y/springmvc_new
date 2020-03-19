@@ -14,18 +14,18 @@
 
     <span><a href="../user/my/pathAnt">Path Ant</a> </span><br>
     <span><a href="../user/rest/1">Rest GET</a> </span><br>
+    <span><a href="../user/pathVariable/王磊">Path Variable</a></span><br>
+    <span><a href="../user/requestParam?loginName=vermouth&password=123456">Request Param</a></span><br>
 
     <form action="../user/rest" method="post">
         <input type="submit" value="Rest POST" />
     </form>
 
     <form action="../user/rest/1" method="post">
-
         <!-- 添加名为_method的隐藏域，并赋值为DELETE，HiddenHttpMethodFilter正是通过该隐藏域的值将POST请求转换成DELETE请求 -->
         <input type="hidden" name="_method" value="DELETE" />
         <input type="submit" value="Rest DELETE" />
     </form>
-
 
     <form action="../user/rest/1" method="post">
         <!-- 添加名为_method,值为PUT的隐藏域，HiddenHttpMethodFilter正是通过该隐藏域的值将POST请求转换为PUT请求 -->

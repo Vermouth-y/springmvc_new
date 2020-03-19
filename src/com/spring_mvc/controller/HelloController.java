@@ -1,9 +1,7 @@
 package com.spring_mvc.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -85,4 +83,25 @@ public class HelloController {
         System.out.println("Rest PUT: " + id + "\n");
         return "redirect:/user/doTransfer";
     }
+
+    //绑定控制器类方法处理方法入参
+    //1.映射URL绑定的占位符到方法入参,使用@PathVariable()方式
+    @RequestMapping(value = "/pathVariable/{name}")
+    public String pathVariable(@PathVariable("name") String name){
+        System.out.println("Path Variable: " + name + "\n");
+        return "redirect:/user/resSuccess";
+    }
+
+    //2.绑定请求参数到控制器方法参数,控制器方法入参处使用@RequestParam注解将请求参数传递给方法
+    @RequestMapping(value = "/requestParam")
+    public String requestParam(
+            @RequestParam(value = "loginName") String loginName,
+            @RequestParam(value = "password") String password
+    ){
+        System.out.println("Request Param: " + loginName + " " + password);
+        return "redirect:/user/resSuccess";
+    }
+
+    //3.将请求参数绑定到控制器方法的表单对象，见UserController类
+
 }
