@@ -7,7 +7,7 @@ public class Address {
     //重写toString()方法
     @Override
     public String toString(){
-        return "Address[province=" + province + ", city=" + city + "]";
+        return "省: " + province + " 市: " + city;
     }
 
     public String getProvince() {
