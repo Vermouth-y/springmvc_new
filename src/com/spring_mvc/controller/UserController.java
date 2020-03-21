@@ -1,11 +1,14 @@
 package com.spring_mvc.controller;
 
 import com.spring_mvc.entity.User;
+import com.spring_mvc.entity.UserMap;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Iterator;
+import java.util.Set;
 
 
 //使用@Controller注解申明这是一个基于Annotation的控制器类
@@ -33,6 +36,28 @@ public class UserController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("msg", "用户管理");
         modelAndView.setViewName("user");
+        return modelAndView;
+    }
+
+    //添加getUser()方法，实现将请求参数绑定到控制方法的Map对象，并遍历对象同时输出控制台
+    @RequestMapping(value = "/getUser")
+    public String getUser(UserMap userMap){
+        Set set = userMap.getUserMap().keySet();
+        Iterator iterator = set.iterator();
+        while (iterator.hasNext()){
+            Object keyName = iterator.next();
+            User user = userMap.getUserMap().get(keyName);
+            System.out.println(user);
+        }
+        return "redirect:/user/resSuccess";
+    }
+
+    //添加userMap首页，跳转userMap页面
+    @RequestMapping(value = "/usermap")
+    public ModelAndView userMao(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("msg", "userMap");
+        modelAndView.setViewName("userMap");
         return modelAndView;
     }
 }

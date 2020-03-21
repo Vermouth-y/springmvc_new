@@ -6,10 +6,10 @@ public class User {
     private Address address;
 
     //重写toString()方法
-    //@Override
-//    public String toString(){
-//        return "User[username=" + username + ", password=" + password + ", address=" + address + "]";
-//    }
+    @Override
+    public String toString(){
+        return "User[username=" + username + ", password=" + password + ", address=" + address + "]";
+    }
 
     public String getUsername() {
         return username;
