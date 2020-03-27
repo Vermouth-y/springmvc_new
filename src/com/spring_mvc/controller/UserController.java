@@ -151,9 +151,10 @@ public class UserController {
     public Collection<User> returnJson(){
         Map<Integer, User> userMap = new HashMap<>();
         userMap.put(1, new User("王磊", "vermouth", new Address("重庆", "南川")));
-        userMap.put(2, new User("刘宇", "love", new Address("重庆", "丰都")));
-        userMap.put(3, new User("李柯", "future", new Address("重庆", "丰都")));
-        userMap.put(4, new User("李丞豪", "future", new Address("重庆", "南川")));
+        userMap.put(2, new User("刘宇", "liuyu", new Address("重庆", "丰都")));
+        userMap.put(3, new User("李柯", "like", new Address("重庆", "丰都")));
+        userMap.put(4, new User("李丞豪", "lichegnhao", new Address("重庆", "南川")));
+        userMap.put(5, new User("李文章", "liwenzhang", new Address("重庆", "南川")));
         return userMap.values();
     }
 }
