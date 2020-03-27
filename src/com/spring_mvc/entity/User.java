@@ -5,6 +5,13 @@ public class User {
     private String password;
     private Address address;
 
+    public User(String username, String password, Address address){
+        this.username = username;
+        this.password = password;
+        this.address = address;
+    }
+    public User(){}
+
     //重写toString()方法
     @Override
     public String toString(){

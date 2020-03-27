@@ -4,6 +4,16 @@ public class Address {
     private String province;
     private String city;
 
+    public Address(){
+
+    }
+
+    public Address(String province, String city){
+        this.province = province;
+        this.city = city;
+    }
+
+
     //重写toString()方法
     @Override
     public String toString(){
